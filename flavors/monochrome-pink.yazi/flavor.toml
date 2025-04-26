@@ -1,0 +1,249 @@
+# : Manager {{{
+
+[manager]
+cwd = { fg = "gray" }
+
+# Hovered
+hovered = { reversed = true }
+preview_hovered = { underline = true }
+
+# Find
+find_keyword = { fg = "#ff79c6", bold = true, italic = true, underline = true }
+find_position = { fg = "#ff79c6", bg = "reset", bold = true, italic = true }
+
+# Symlink
+symlink_target = { italic = true }
+
+# Marker
+marker_copied = { fg = "darkgray", bg = "darkgray" }
+marker_cut = { fg = "#ff79c6", bg = "#ff79c6" }
+marker_marked = { fg = "gray", bg = "gray" }
+marker_selected = { fg = "lightgray", bg = "lightgray" }
+
+# Tab
+tab_active = { reversed = true }
+tab_inactive = {}
+tab_width = 1
+
+# Count
+count_copied = { fg = "black", bg = "darkgray" }
+count_cut = { fg = "black", bg = "#ff79c6" }
+count_selected = { fg = "black", bg = "lightgray" }
+
+# Border
+border_symbol = "│"
+border_style = { fg = "darkgray" }
+
+# Highlighting
+syntect_theme = ""
+
+# : }}}
+
+
+# : Mode {{{
+
+[mode]
+normal_main = { bg = "darkgray", bold = true }
+normal_alt = { fg = "darkgray", bg = "gray" }
+
+# Select mode
+select_main = { bg = "#ff79c6", bold = true }
+select_alt = { fg = "#ff79c6", bg = "gray" }
+
+# Unset mode
+unset_main = { bg = "#ff79c6", bold = true }
+unset_alt = { fg = "#ff79c6", bg = "gray" }
+
+# : }}}
+
+
+# : Status bar {{{
+
+[status]
+overall = {}
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+# Permissions
+perm_sep = { fg = "darkgray" }
+perm_type = { fg = "darkgray" }
+perm_read = { fg = "lightgray" }
+perm_write = { fg = "#ff79c6" }
+perm_exec = { fg = "gray" }
+
+# Progress
+progress_label = { bold = true }
+progress_normal = { fg = "gray", bg = "black" }
+progress_error = { fg = "#ff79c6", bg = "black" }
+
+# : }}}
+
+
+# : Which {{{
+
+[which]
+cols = 3
+mask = { bg = "black" }
+cand = { fg = "#ff79c6" }
+rest = { fg = "darkgray" }
+desc = { fg = "gray" }
+separator = "  "
+separator_style = { fg = "darkgray" }
+
+# : }}}
+
+
+# : Confirmation {{{
+
+[confirm]
+border = { fg = "darkgray" }
+title = { fg = "darkgray" }
+content = {}
+list = {}
+btn_yes = { reversed = true }
+btn_no = {}
+btn_labels = ["  [Y]es  ", "  (N)o  "]
+
+# : }}}
+
+
+# : Spotter {{{
+
+[spot]
+border = { fg = "darkgray" }
+title = { fg = "darkgray" }
+
+# Table
+tbl_col = { fg = "darkgray" }
+tbl_cell = { fg = "lightgray", reversed = true }
+
+# : }}}
+
+
+# : Notification {{{
+
+[notify]
+title_info = { fg = "gray" }
+title_warn = { fg = "lightgray" }
+title_error = { fg = "#ff79c6" }
+
+# Icons
+icon_info = ""
+icon_warn = ""
+icon_error = ""
+
+# : }}}
+
+
+# : Picker {{{
+
+[pick]
+border = { fg = "darkgray" }
+active = { fg = "#ff79c6", bold = true }
+inactive = {}
+
+# : }}}
+
+
+# : Input {{{
+
+[input]
+border = { fg = "darkgray" }
+title = {}
+value = {}
+selected = { reversed = true }
+
+# : }}}
+
+
+# : Completion {{{
+
+[cmp]
+border = { fg = "darkgray" }
+active = { reversed = true }
+inactive = {}
+
+# Icons
+icon_file = ""
+icon_folder = ""
+icon_command = ""
+
+# : }}}
+
+
+# : Task manager {{{
+
+[tasks]
+border = { fg = "darkgray" }
+title = {}
+hovered = { fg = "#ff79c6", underline = true }
+
+# : }}}
+
+
+# : Help menu {{{
+
+[help]
+on = { fg = "gray" }
+run = { fg = "#ff79c6" }
+desc = {}
+hovered = { reversed = true, bold = true }
+footer = { fg = "black", bg = "gray" }
+
+# : }}}
+
+
+# : File-specific styles {{{
+
+[filetype]
+rules = [
+  # Images
+  { mime = "image/*", fg = "lightgray" },
+
+  # Media
+  { mime = "{audio,video}/*", fg = "gray" },
+
+  # Archives
+  { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "darkgray" },
+
+  # Documents
+  { mime = "application/{pdf,doc,rtf}", fg = "lightgray" },
+
+  # Special files
+  { name = "*", is = "orphan", bg = "#ff79c6" },
+  { name = "*", is = "exec", fg = "lightgray" },
+
+  # Fallback
+  { name = "*/", fg = "gray" },
+]
+
+# : }}}
+
+
+# : Icons {{{
+
+[icon]
+# Minimal icons for a monochrome theme
+dirs = [
+  { name = "Desktop", text = "" },
+  { name = "Documents", text = "" },
+  { name = "Downloads", text = "" },
+  { name = "Music", text = "" },
+  { name = "Pictures", text = "" },
+]
+files = [
+  { name = ".gitignore", text = "", fg = "darkgray" },
+  { name = "Dockerfile", text = "󰡨", fg = "darkgray" },
+]
+exts = [
+  { name = "md", text = "", fg = "gray" },
+  { name = "txt", text = "󰈙", fg = "gray" },
+  { name = "toml", text = "", fg = "darkgray" },
+  { name = "json", text = "", fg = "darkgray" },
+  { name = "jpg", text = "", fg = "lightgray" },
+  { name = "png", text = "", fg = "lightgray" },
+  { name = "pdf", text = "", fg = "lightgray" },
+]
+conds = [{ if = "dir", text = "" }, { if = "exec", text = "" }]
+
+# : }}}

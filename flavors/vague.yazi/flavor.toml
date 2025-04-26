@@ -1,0 +1,51 @@
+# ~/.config/yazi/themes/vague.toml
+
+# UI elements
+[appearance]
+# Override the layout of statusline components
+status_components = ["permissions", "size", "user", "group", "mtime", "prefix"]
+
+# Adjust the folder icon
+[icons]
+directory = ""
+
+# Your main color palette based on vague theme
+[color]
+# Base colors
+gray_0 = "#282c34"
+gray_1 = "#3f444a"
+gray_2 = "#5a5d63"
+gray_3 = "#868991"
+gray_4 = "#cacaca"
+gray_5 = "#e3e3e3"
+
+# Highlight colors - adjust these to match your vague theme
+blue = "#61afef"
+red = "#e06c75"
+yellow = "#e5c07b"
+orange = "#d19a66"
+green = "#98c379"
+purple = "#c678dd"
+cyan = "#56b6c2"
+
+# Apply colors to UI elements
+[style]
+# File browser
+file_browser.border.focused = { fg = "blue" }
+file_browser.border.unfocused = { fg = "gray_3" }
+file_browser.selection = { bg = "gray_1" }
+file_browser.cursor = { bg = "gray_2" }
+
+# Status line
+status.normal = { bg = "gray_1", fg = "gray_5" }
+status.command = { bg = "blue", fg = "gray_0" }
+status.progress = { bg = "yellow", fg = "gray_0" }
+status.mode = { bg = "gray_3", fg = "gray_0" }
+
+# Highlighting specific file types
+file.text = { fg = "gray_4" }
+file.image = { fg = "yellow" }
+file.video = { fg = "orange" }
+file.audio = { fg = "purple" }
+file.directory = { fg = "blue", bold = true }
+file.executable = { fg = "green" }
